@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Entrez le mot de passe</h3>
+
+Password: <input type="password" id="myPsw" value="psw123">
+
+<p>Tous ces défis, c'est que des problèmes style trouve le mot de passe... Fiu roa</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+  var xmlHttp = new XMLHttpRequest();
+  // Ne visite pas ce lien, c'est dangeureux!
+  xmlHttp.open( "GET", "https://raw.githubusercontent.com/stagehackingtahiti/DefiHacking/main/password", false); // false for synchronous request
+  xmlHttp.send(null);
+  var password = xmlHttp.responseText;
+
+  function myFunction() {
+    var x = document.getElementById("myPsw").value;
+    if((x) === (password.replace(/\r?\n|\r/g, ""))) {
+      alert("Bien joué! Tu as résolu le problème.");
+    }
+  }
+</script>
+</body>
+</html>
